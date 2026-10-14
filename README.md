@@ -3,11 +3,11 @@
 
 [![Python Tests](https://github.com/tabner0320/fruit.csv/actions/workflows/python-tests.yml/badge.svg)](https://github.com/tabner0320/fruit.csv/actions/workflows/python-tests.yml)
 
-A Python data-analysis project that uses **pandas** and **Matplotlib** to analyze fruit sales, calculate growth, and generate visualizations.
+A Python data-analysis project that uses **pandas** and **Matplotlib** to analyze fruit sales, calculate sales growth, and generate visualizations.
 
 ## Project Overview
 
-This project analyzes apple and banana sales from 2017 and 2018. It demonstrates CSV generation, DataFrame manipulation, sales aggregation, percentage-growth calculations, data visualization, and automated testing.
+This project analyzes apple and banana sales from 2017 and 2018. It demonstrates CSV generation, DataFrame manipulation, data aggregation, percentage-growth calculations, data visualization, and automated testing.
 
 ## Features
 
@@ -17,7 +17,7 @@ This project analyzes apple and banana sales from 2017 and 2018. It demonstrates
 - Calculate percentage growth between 2017 and 2018.
 - Generate two Matplotlib visualizations.
 - Run automated tests with pytest.
-- Run automated tests through GitHub Actions CI.
+- Use GitHub Actions for continuous integration.
 
 ## Technologies Used
 
@@ -45,7 +45,7 @@ This project analyzes apple and banana sales from 2017 and 2018. It demonstrates
 
 Total sales increased from **56 in 2017** to **75 in 2018**.
 
-Bananas experienced a higher growth rate, while apples had higher total sales.
+Bananas experienced higher percentage growth, while apples had higher total sales.
 
 ## Data Visualizations
 
@@ -98,25 +98,31 @@ The script generates:
 
 ## Automated Testing
 
-The project includes three pytest tests:
+The project includes five automated pytest tests.
 
-1. `test_yearly_sales_totals`
-2. `test_fruit_sales_totals`
-3. `test_sales_growth`
+| Test | Description |
+|---|---|
+| `test_yearly_sales_totals` | Verifies yearly sales totals |
+| `test_fruit_sales_totals` | Verifies totals for each fruit |
+| `test_sales_growth` | Verifies percentage-growth calculations |
+| `test_yearly_totals_with_empty_data` | Tests an empty sales dataset |
+| `test_sales_growth_with_decreasing_sales` | Tests negative growth when sales decline |
 
-Run the tests:
+### Run Tests
 
 ```bash
 python -m pytest -v
 ```
 
-### Latest Verified Local Results
+### Latest Verified Results
 
-**3 tests passed, 0 failed.**
+**5 tests passed, 0 failed.**
+
+The tests cover normal sales calculations, empty datasets, and declining sales.
 
 ## Continuous Integration
 
-GitHub Actions automatically runs the Python tests when changes are pushed to configured branches or when pull requests target `main`.
+GitHub Actions automatically runs pytest when changes are pushed to configured branches or when pull requests target `main`.
 
 The workflow:
 
